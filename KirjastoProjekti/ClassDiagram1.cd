@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KirjastoProjekti.Kirja">
+    <Position X="3.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAQAAAAAAAAAACAAAAkAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Kirja.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KirjastoProjekti.Kirjasto">
+    <Position X="0.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAIAAAAAAAAAAAAACAAAAgAAAAAAAEAAAAgACA=</HashCode>
+      <FileName>Kirjasto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
