@@ -1,18 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="KirjastoProjekti.Kirja">
-    <Position X="3.25" Y="1.25" Width="1.5" />
+    <Position X="6" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAQAAAAAAAAAACAAAAkAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAQAAAAAAAAAACAAAAEAAAAAAAAAAAQABAAA=</HashCode>
       <FileName>Kirja.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KirjastoProjekti.Kirjasto">
-    <Position X="0.75" Y="1.25" Width="1.5" />
+    <Position X="3.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAIAAAAAAAAAAAAACAAAAgAAAAAAAEAAAAgACA=</HashCode>
       <FileName>Kirjasto.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
+  <Class Name="KirjastoProjekti.PainettuKirja">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>PainettuKirja.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KirjastoProjekti.EKirja">
+    <Position X="8.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAABAAA=</HashCode>
+      <FileName>EKirja.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="KirjastoProjekti.ITallennettava">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>ITallennettava.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

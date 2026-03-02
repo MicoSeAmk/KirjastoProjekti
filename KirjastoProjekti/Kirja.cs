@@ -19,10 +19,10 @@ namespace KirjastoProjekti
         public string ISBN
         { get; set; }
 
-        public string PalautaStr()
-        {
-            return $"{Nimi};{Kirjoittaja};{Vuosi};{ISBN}";
-        }
+       // public string PalautaStr()
+       // {
+       //     return $"{Nimi};{Kirjoittaja};{Vuosi};{ISBN}";
+       // }
 
         public static Kirja LuoRivista(string rivi)
         {
@@ -34,6 +34,11 @@ namespace KirjastoProjekti
                 Vuosi = int.Parse(osat[2]),
                 ISBN = osat[3]
             };
+        }
+
+        public virtual string Kuvaus()
+        {
+            return $"{Nimi} ({Vuosi}), {Kirjoittaja}";
         }
     }
 }
