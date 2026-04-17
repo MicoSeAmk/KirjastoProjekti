@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Text.Json;
 
 namespace KirjastoProjekti
 {
     public class Kirjasto : ITallennettava
     {
-        public System.Collections.Generic.List<Kirja> Kirjat
-        { get; set; } = new List<Kirja>();
+        public List<Kirja> Kirjat { get; set; } = new();
 
         public void LisaaKirja(Kirja kirja)
         { Kirjat.Add(kirja); }
@@ -25,25 +25,29 @@ namespace KirjastoProjekti
             foreach (var kirja in Kirjat)
             {
                 Console.WriteLine(kirja.Kuvaus());
-                //Console.WriteLine($"{kirja.Nimi} - {kirja.Kirjoittaja} ({kirja.Vuosi}) [{kirja.ISBN}]");
             }
         }
 
         public void Tallenna(string polku)
         {
-            File.WriteAllLines(polku, Kirjat.Select(k => k.Kuvaus()));
-            //File.WriteAllLines(polku, Kirjat.Select(k => k.PalautaStr()));
+            var json = JsonSerializer.Serialize(Kirjat, new JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+
+            File.WriteAllText(polku, json);
         }
 
         public void Lataa(string polku)
         {
-            Console.WriteLine("Esimerkki yksi kaksi");
-
-            Kirjat.Clear();
-            foreach (var rivi in File.ReadAllLines(polku))
+            if (!File.Exists(polku))
             {
-                Kirjat.Add(Kirja.LuoRivista(rivi));
+                Console.WriteLine("Tiedostoa ei löydy");
+                return;
             }
+
+            var json = File.ReadAllText(polku);
+            Kirjat = JsonSerializer.Deserialize<List<Kirja>>(json);
         }
     }
 }

@@ -8,29 +8,90 @@ namespace KirjastoProjekti
         {
 
             Kirjasto kirjasto = new Kirjasto();
+            bool jatka = true;
 
-            //Kokeillaan lisätä kuvitteellinen kirja
-            kirjasto.LisaaKirja(new PainettuKirja
+            while (jatka)
             {
-                Nimi = "IT osaaja",
-                Kirjoittaja = "Jeb Björklund",
-                Vuosi = 2007,
-                ISBN = "123-456",
-                Sivumaara = 214
-            });
+                Console.WriteLine("--- KIRJASTO ---");
+                Console.WriteLine("1> Lisää painettu kirja");
+                Console.WriteLine("2> Lisää e-kirja");
+                Console.WriteLine("3> Näytä kirjat");
+                Console.WriteLine("4> Tallenna");
+                Console.WriteLine("5> Lataa");
+                Console.WriteLine("0> Lopeta");
+                Console.WriteLine("Valinta: ");
 
-            kirjasto.LisaaKirja(new EKirja
-            {
-                Nimi = "Tietokoneen kasaus",
-                Kirjoittaja = "Julia Faber",
-                Vuosi = 2012,
-                ISBN = "987-654",
-                TiedostoKokoMb = 3.6
-            });
+                string valinta = Console.ReadLine();
 
-            kirjasto.TulostaKirjat();
+                switch (valinta)
+                {
+                    case "1":
+                        LisaaPainettu(kirjasto);
+                        break;
 
-            Console.ReadKey();
+                    case "2":
+                        LisaaEKirja(kirjasto);
+                        break;
+
+                    case "3":
+                        kirjasto.TulostaKirjat();
+                        break;
+
+                    case "4":
+                        kirjasto.Tallenna("kirjasto.json");
+                        Console.WriteLine("Tallennettu.");
+                        break;
+
+                    case "5":
+                        kirjasto.Lataa("kirjasto.json");
+                        Console.WriteLine("Ladattu.");
+                        break;
+
+                    case "0":
+                        jatka = false;
+                        break;
+                }
+            }
+        }
+
+        static void LisaaPainettu(Kirjasto kirjasto)
+        {
+            Console.Write("Nimi: ");
+            string nimi = Console.ReadLine();
+
+            Console.Write("Kirjoittaja: ");
+            string kirjoittaja = Console.ReadLine();
+
+            Console.Write("Vuosi: ");
+            int vuosi = int.Parse(Console.ReadLine());
+
+            Console.Write("ISBN: ");
+            string isbn = Console.ReadLine();
+
+            Console.Write("Sivumäärä: ");
+            int sivut = int.Parse(Console.ReadLine());
+
+            kirjasto.LisaaKirja(new PainettuKirja(nimi, kirjoittaja, vuosi, isbn, sivut));
+        }
+
+        static void LisaaEKirja(Kirjasto kirjasto)
+        {
+            Console.Write("Nimi: ");
+            string nimi = Console.ReadLine();
+
+            Console.Write("Kirjoittaja: ");
+            string kirjoittaja = Console.ReadLine();
+
+            Console.Write("Vuosi: ");
+            int vuosi = int.Parse(Console.ReadLine());
+
+            Console.Write("ISBN: ");
+            string isbn = Console.ReadLine();
+
+            Console.Write("Tiedostokoko (MB): ");
+            double koko = double.Parse(Console.ReadLine());
+
+            kirjasto.LisaaKirja(new EKirja(nimi, kirjoittaja, vuosi, isbn, koko));
         }
     }
 }

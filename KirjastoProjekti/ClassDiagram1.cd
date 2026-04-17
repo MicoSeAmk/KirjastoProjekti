@@ -3,9 +3,10 @@
   <Class Name="KirjastoProjekti.Kirja">
     <Position X="6" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAQAAAAAAAAAACAAAAEAAAAAAAAAAAQABAAA=</HashCode>
+      <HashCode>AAAAIAAAAQAAAAAAAAAAAAAEAEAAAAAAAAAAAQABAAA=</HashCode>
       <FileName>Kirja.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="KirjastoProjekti.Kirjasto">
     <Position X="3.5" Y="1.75" Width="1.5" />
@@ -29,11 +30,25 @@
       <FileName>EKirja.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="KirjastoProjekti.Kirjailija">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAEAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Kirjailija.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="KirjastoProjekti.ITallennettava">
-    <Position X="6" Y="4.75" Width="1.5" />
+    <Position X="3.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>ITallennettava.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="KirjastoProjekti.IKuvattava">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>IKuvattava.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
