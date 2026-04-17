@@ -22,7 +22,7 @@ namespace KirjastoProjekti
 
         public void TulostaKirjat()
         {
-            foreach (var kirja in Kirjat)
+            foreach (IKuvattava kirja in Kirjat) // Tähän kytkettiin rajapinta esityksen aikana
             {
                 Console.WriteLine(kirja.Kuvaus());
             }
