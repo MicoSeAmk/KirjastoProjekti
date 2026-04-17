@@ -7,7 +7,7 @@ namespace KirjastoProjekti
         static void Main(string[] args)
         {
 
-            Kirjasto kirjasto = new Kirjasto();
+            Kirjasto kirjasto = new Kirjasto(); // Olio ohjelman ajaksi
             bool jatka = true;
 
             while (jatka)
@@ -71,7 +71,7 @@ namespace KirjastoProjekti
             Console.Write("Sivumäärä: ");
             int sivut = int.Parse(Console.ReadLine());
 
-            kirjasto.LisaaKirja(new PainettuKirja(nimi, kirjoittaja, vuosi, isbn, sivut));
+            kirjasto.LisaaKirja(new PainettuKirja(nimi, kirjoittaja, vuosi, isbn, sivut)); // PainettuKirja olio
         }
 
         static void LisaaEKirja(Kirjasto kirjasto)
@@ -91,7 +91,7 @@ namespace KirjastoProjekti
             Console.Write("Tiedostokoko (MB): ");
             double koko = double.Parse(Console.ReadLine());
 
-            kirjasto.LisaaKirja(new EKirja(nimi, kirjoittaja, vuosi, isbn, koko));
+            kirjasto.LisaaKirja(new EKirja(nimi, kirjoittaja, vuosi, isbn, koko)); // E-kirja olio
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KirjastoProjekti
 {
-    public class Kirja : IKuvattava
+    public class Kirja : IKuvattava // toteutetaan rajapintaa
     {
         public string Nimi
         { get; set; }

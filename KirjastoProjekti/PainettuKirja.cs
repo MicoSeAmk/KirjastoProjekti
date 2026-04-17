@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KirjastoProjekti
 {
-    public class PainettuKirja : Kirja
+    public class PainettuKirja : Kirja // perii kirjan
     {
         public int Sivumaara { get; set; }
 
@@ -16,7 +16,7 @@ namespace KirjastoProjekti
             Sivumaara = sivut;
         }
 
-        public override string Kuvaus()
+        public override string Kuvaus() // ylikirjoitus
         {
             return base.Kuvaus() + $" – Painettu kirja, {Sivumaara} sivua";
         }

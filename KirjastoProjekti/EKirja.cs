@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KirjastoProjekti
 {
-    public class EKirja : Kirja
+    public class EKirja : Kirja // perii kirjan
     {
         public double TiedostoKokoMb { get; set; }
 
@@ -16,7 +16,7 @@ namespace KirjastoProjekti
             TiedostoKokoMb = koko;
         }
 
-        public override string Kuvaus()
+        public override string Kuvaus() // ylikirjoitus
         {
             return base.Kuvaus() + $" – E‑kirja, {TiedostoKokoMb} Mt";
         }

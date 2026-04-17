@@ -7,9 +7,9 @@ using System.Text.Json;
 
 namespace KirjastoProjekti
 {
-    public class Kirjasto : ITallennettava
+    public class Kirjasto : ITallennettava // toteutetaan rajapintaa
     {
-        public List<Kirja> Kirjat { get; set; } = new();
+        public List<Kirja> Kirjat { get; set; } = new(); // dynamiikkaa, oliokokoelma
 
         public void LisaaKirja(Kirja kirja)
         { Kirjat.Add(kirja); }
@@ -31,15 +31,15 @@ namespace KirjastoProjekti
         public void Tallenna(string polku)
         {
             var json = JsonSerializer.Serialize(Kirjat, new JsonSerializerOptions
-            {
+            { // tallenna olio data
                 WriteIndented = true
             });
-
+            // tallenna
             File.WriteAllText(polku, json);
         }
 
         public void Lataa(string polku)
-        {
+        { // lataa
             if (!File.Exists(polku))
             {
                 Console.WriteLine("Tiedostoa ei löydy");
@@ -48,6 +48,6 @@ namespace KirjastoProjekti
 
             var json = File.ReadAllText(polku);
             Kirjat = JsonSerializer.Deserialize<List<Kirja>>(json);
-        }
+        } // lataa oliodata
     }
 }
